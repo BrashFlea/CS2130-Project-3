@@ -52,9 +52,15 @@ public class DProb {
 	    return  result;
 	}
 	
-	public static long Binomial(double P, long N, long X) {
+	public static double Binomial(double P, long N, long X) {
+	    /*Probability of success = P | Number of trials = N | Total successes = X */
+	    double result = 0.0;
+	    double nCr = Combination(N, X);
+	    double q = 1 - P;
 	    
-		return 0;
+	    result = nCr * Math.pow(P, X) * Math.pow(q, (N-X));
+	    
+		return result;
 	}
 	
 	public static long Poisson(double Xmean, long X) {
