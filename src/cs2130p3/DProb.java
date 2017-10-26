@@ -40,9 +40,16 @@ public class DProb {
         return (long) combination;
 	}
 	
-	public static long HyperGeometric(long Np, long Xp, long N, long X) {
+	public static double HyperGeometric(long Np, long Xp, long N, long X) {
+	    /*Population Size = Np | Successes in population = Xp | Sample size = N | Successes in sample = X */
+	    double result = 0.0;
+	    double kCx = Combination(Xp,X);
+	    double NkCnX = Combination((Np-Xp), (N-X));
+	    double NCn = Combination(Np, N);
 	    
-	    return 0;
+	    result = (kCx * NkCnX) / NCn;
+	    
+	    return  result;
 	}
 	
 	public static long Binomial(double P, long N, long X) {
