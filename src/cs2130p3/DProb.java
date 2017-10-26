@@ -24,8 +24,20 @@ public class DProb {
 	}
 	
 	public static long Combination(long N, long X) {
+        double combination = 1.0;
+        
+        if( X == 0 || X == N) {
+            return (long) combination;
+        }
+        else if (X > (N-X)) {
+           X = (N-X);
+        }
+        
+        for(int i = 0; i < X; i++ ) {
+            combination = combination * (N-i) / (i+1);
+        }
 
-	    return 0;
+        return (long) combination;
 	}
 	
 	public static long HyperGeometric(long Np, long Xp, long N, long X) {
