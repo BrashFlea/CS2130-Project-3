@@ -63,9 +63,19 @@ public class DProb {
 		return result;
 	}
 	
-	public static long Poisson(double Xmean, long X) {
+	public static double Poisson(double Xmean, long X) {
+	    double result = 0.0;
+	    double e = 2.71828;
+	    double XFact = 1.0;
 	    
-		return 0;
+	    for(int i = 0; i < X; i++) {
+	        XFact = XFact * (double) (X - i);
+	    }
+	    
+	    result = Math.pow(Xmean, X) / (XFact * (Math.pow(e, Xmean)));
+	    
+		return result;
 	}
+	
 
 } // end class
