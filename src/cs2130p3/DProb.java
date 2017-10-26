@@ -1,10 +1,11 @@
+// Discrete Probability Library
 package cs2130p3;
 
 import java.lang.Math;
 
 public class DProb {
 	
-	public static long Permutation(long N, long X) {
+	public static double Permutation(long N, long X) {
 	    double permutation = 0.0;
 	    double n = 1.0;
 	    double r = 1.0;
@@ -20,14 +21,14 @@ public class DProb {
 
 	    permutation = Math.round((n/r));
     
-	    return (long) permutation;
+	    return permutation;
 	}
 	
-	public static long Combination(long N, long X) {
+	public static double Combination(long N, long X) {
         double combination = 1.0;
         
         if( X == 0 || X == N) {
-            return (long) combination;
+            return combination;
         }
         else if (X > (N-X)) {
            X = (N-X);
@@ -37,7 +38,7 @@ public class DProb {
             combination = combination * (N-i) / (i+1);
         }
 
-        return (long) combination;
+        return combination;
 	}
 	
 	public static double HyperGeometric(long Np, long Xp, long N, long X) {

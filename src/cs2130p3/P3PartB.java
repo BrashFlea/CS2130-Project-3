@@ -5,6 +5,7 @@ import java.text.DecimalFormat;
 
 public class P3PartB {
     private static DecimalFormat df4 = new DecimalFormat(".####");
+    private static DecimalFormat df0 = new DecimalFormat("");
     private static double Q2CResult = DProb.HyperGeometric(50, 9, 4, 0) * DProb.HyperGeometric(30, 4, 4, 0);
     private static double Q3BResult = DProb.HyperGeometric(71, 5, 10, 1) + DProb.HyperGeometric(71, 5, 10, 0);
     private static double Q4BResults = DProb.Binomial(0.069, 30, 2) + DProb.Binomial(0.069, 30, 1) + DProb.Binomial(0.069, 30, 0);
@@ -20,9 +21,9 @@ public class P3PartB {
          * The manager is going to randomly draw 4 employees and give each one a prize.
          */
         System.out.println("Question 1 part a:");
-        System.out.println("Permutation of 33 choose 4 = " + DProb.Permutation(33, 4));
+        System.out.println("Permutation of 33 choose 4 = " + df0.format(DProb.Permutation(33, 4)));
         System.out.println("Question 1 part b:");
-        System.out.println("Combination of 33 choose 4 = " + DProb.Combination(33, 4));
+        System.out.println("Combination of 33 choose 4 = " + df0.format(DProb.Combination(33, 4)));
         addLine();
         
         /**
